@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地球物理學課程與專題展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 導航列 -->
+    <nav class="sticky top-0 z-50 glass border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-earth-asia text-blue-600 text-2xl mr-2"></i>
+                    <span class="font-bold text-xl tracking-tight text-slate-800">地球物理學專欄</span>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <button onclick="showTab('syllabus')" class="nav-btn px-3 py-2 rounded-md text-sm font-medium hover:text-blue-600 transition">各週主題</button>
+                    <button onclick="showTab('field')" class="nav-btn px-3 py-2 rounded-md text-sm font-medium hover:text-blue-600 transition">校園野外實驗</button>
+                    <button onclick="showTab('gravity')" class="nav-btn px-3 py-2 rounded-md text-sm font-medium hover:text-blue-600 transition">重力探勘知識</button>
+                    <button onclick="showTab('seminar')" class="nav-btn px-3 py-2 rounded-md text-sm font-medium hover:text-blue-600 transition">黃有志博士演講</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主首頁 Banner -->
+    <header class="gradient-bg text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">探索地層深處的奧秘</h1>
+            <p class="text-blue-200 text-lg mb-8 max-w-2xl mx-auto">從理論知識到資料處理技能，結合野外實作與專家講座，全面掌握地球物理探勘技術。</p>
+            <a href="https://huggingface.co/spaces/cwadayi/Geophysics_class" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-bold transition shadow-lg">
+                課程介紹系統 <i class="fas fa-external-link-alt ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        
+        <!-- Tab 1: 各週主題 -->
+        <section id="syllabus" class="tab-content active">
+            <h2 class="text-3xl font-bold mb-8 flex items-center"><i class="fas fa-calendar-alt mr-3 text-blue-600"></i>課程進度表</h2>
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <!-- 生成週次卡片 -->
+                <script>
+                    const weeks = [
+                        { w: "9/10", t: "第一週：課程介紹", c: "地球物理概要、Python環境、Hugging Face/GitHub帳號申請" },
+                        { w: "9/17", t: "第二週：折射探勘學", c: "PyGMT、ObsPy、Streamlit 技能培訓" },
+                        { w: "9/24", t: "第三週：校園野外實驗", c: "折射探勘現場實作" },
+                        { w: "10/1", t: "第四週：地球物理專題演講", c: "專家實務經驗分享" },
+                        { w: "10/8", t: "第五週：折射探勘學(二)", c: "Hugging Face Space 互動程式製作" },
+                        { w: "10/15", t: "第六週：重力探勘學", c: "Colab 進階使用" },
+                        { w: "10/22", t: "第七週：重力探勘學(二)", c: "Gemini API 與 Dify 應用" },
+                        { w: "10/29", t: "第八週：期中考試", c: "學期進度評量" },
+                        { w: "11/05", t: "第九週：板塊構造與地震", c: "PyGMT 地圖繪製實作" },
+                        { w: "12/10", t: "第十四週：黃有志博士專題演講", c: "阿蘇火山與嘉南地震觀測", highlight: true },
+                        { w: "12/17", t: "第十五週：廖勿渝博士專題演講", c: "AI遇上地震學：全自動化監測", highlight: true },
+                        { w: "12/24", t: "第十六週：期末專題發表", c: "學習成果展示" }
+                    ];
+                    // 這裡簡化顯示，您可以補全所有週次
+                </script>
+                <!-- 手動列出關鍵週次 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-600">
+                    <span class="text-blue-600 font-bold">9/10 Week 01</span>
+                    <h3 class="text-lg font-bold mt-2">課程介紹與環境架設</h3>
+                    <p class="text-gray-600 text-sm mt-2">學習 Python 環境、Colab、GitHub 與 Dify 工具申請。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-600">
+                    <span class="text-green-600 font-bold">9/24 Week 03</span>
+                    <h3 class="text-lg font-bold mt-2">校園野外實驗</h3>
+                    <p class="text-gray-600 text-sm mt-2">折射探勘實地操作與 Geophone 佈放。</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-sm border-l-4 border-indigo-600">
+                    <span class="text-indigo-600 font-bold">12/10 Week 14</span>
+                    <h3 class="text-lg font-bold mt-2">黃有志博士演講</h3>
+                    <p class="text-gray-600 text-sm mt-2">從阿蘇火山到嘉南地震觀測之應用。</p>
+                </div>
+            </div>
+            <p class="mt-8 text-center text-gray-500 italic">更多週次內容請參閱內部課程大綱</p>
+        </section>
+
+        <!-- Tab 2: 校園野外實驗 -->
+        <section id="field" class="tab-content">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-slate-800 text-white p-8">
+                        <h2 class="text-3xl font-bold mb-4">折射探勘實驗</h2>
+                        <p class="text-slate-400 mb-6">地點：校園草皮</p>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-400"></i> 測量地震波介質速率</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-400"></i> 推算地層界面深度</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-400"></i> 第一動點(First Arrival)分析</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-slate-800">數據分析結果 (第七組)</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-700">直達波 (Direct Wave)</h4>
+                                <p class="text-3xl font-mono mt-2">351.39 m/s</p>
+                                <p class="text-xs text-gray-500 mt-1">計算平均值 (排除極端值)</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-700">折射波 (Refracted Wave)</h4>
+                                <p class="text-3xl font-mono mt-2">1174.82 m/s</p>
+                                <p class="text-xs text-gray-500 mt-1">下層波速 V2 > V1</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 p-6 bg-blue-600 text-white rounded-xl">
+                            <h4 class="font-bold text-xl mb-2 italic">計算深度結果：</h4>
+                            <p class="text-4xl font-bold">h ≈ 1.84 m</p>
+                            <p class="text-sm mt-2 opacity-80">實驗結論：兩層地層介面深度約為 1.84 公尺。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 3: 地球物理知識：重力探勘 -->
+        <section id="gravity" class="tab-content">
+            <h2 class="text-3xl font-bold mb-8 text-center">10/15 重力探勘學專題</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4 text-orange-600 text-xl font-bold">1</div>
+                    <h3 class="font-bold text-lg mb-2">重力異常基本原理</h3>
+                    <p class="text-gray-600 text-sm">探討地下密度差異引起的重力場變化，了解布蓋修正(Bouguer Correction)之必要性。</p>
+                    <a href="https://oceanicdayi.blogspot.com/2025/10/1015-1.html" target="_blank" class="text-blue-600 text-sm mt-4 inline-block font-bold">閱讀筆記 →</a>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4 text-orange-600 text-xl font-bold">2</div>
+                    <h3 class="font-bold text-lg mb-2">儀器觀測與修正</h3>
+                    <p class="text-gray-600 text-sm">學習使用重力儀進行野外觀測，並學習自由空氣修正與地形修正之流程。</p>
+                    <a href="https://oceanicdayi.blogspot.com/2025/10/1015-2.html" target="_blank" class="text-blue-600 text-sm mt-4 inline-block font-bold">閱讀筆記 →</a>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4 text-orange-600 text-xl font-bold">3</div>
+                    <h3 class="font-bold text-lg mb-2">實際資料處理案例</h3>
+                    <p class="text-gray-600 text-sm">如何利用 Colab 進行大規模重力資料的數值模擬與空間分佈圖製作。</p>
+                    <a href="https://oceanicdayi.blogspot.com/2025/10/1015-3.html" target="_blank" class="text-blue-600 text-sm mt-4 inline-block font-bold">閱讀筆記 →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 4: 黃有志博士演講 -->
+        <section id="seminar" class="tab-content">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                <div class="flex flex-col md:flex-row gap-10">
+                    <div class="md:w-1/4 text-center">
+                        <div class="w-32 h-32 bg-blue-100 rounded-full mx-auto flex items-center justify-center text-blue-600 text-5xl">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4">黃有志 博士</h3>
+                        <p class="text-blue-600 font-medium">國研院國震中心 副研究員</p>
+                        <div class="mt-4 text-xs text-left bg-gray-50 p-4 rounded-lg leading-relaxed">
+                            <p class="font-bold border-b pb-1 mb-2">經歷：</p>
+                            <p>• 中央研究院地球科學所 (2.5年)</p>
+                            <p>• 京都大學火山研究中心 (3年)</p>
+                            <p>• 麻省理工學院(MIT) 訪問</p>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h2 class="text-3xl font-bold text-slate-800 mb-2">從阿蘇火山、熊本地震到嘉南地震觀測</h2>
+                        <p class="text-slate-500 mb-6 italic">日期：民國114年12月10日 | 台北市立大學</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="border-l-4 border-red-500 pl-4">
+                                <h4 class="font-bold text-red-600">熊本地震 (2016)</h4>
+                                <p class="text-sm text-gray-700 mt-2">規模 M7.3 主震。黃博士實地經歷震度 7 的衝擊，觀察到複合式災害（山崩、斷層破裂、火山噴發預警）。</p>
+                            </div>
+                            <div class="border-l-4 border-orange-500 pl-4">
+                                <h4 class="font-bold text-orange-600">阿蘇火山監測</h4>
+                                <p class="text-sm text-gray-700 mt-2">利用地震儀、次聲波(Infrasound)與地殼變形監測，預警斯通波利式與岩漿水蒸氣噴發。</p>
+                            </div>
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-bold text-blue-600">嘉南地區觀測</h4>
+                                <p class="text-sm text-gray-700 mt-2">建立西南台灣即時地震觀測網 (NC, IES-BATS)，針對布田川-日奈久斷層帶與嘉南平原地震序列進行分析。</p>
+                            </div>
+                            <div class="border-l-4 border-indigo-500 pl-4">
+                                <h4 class="font-bold text-indigo-600">大屯火山群省思</h4>
+                                <p class="text-sm text-gray-700 mt-2">台灣大台北都會區緊鄰大屯火山與山腳斷層，應加強地表噴氣增加與水蒸氣噴發之日常監測。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="mb-4">地球物理學：理論、實作與前瞻應用</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-white"><i class="fab fa-github"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-python"></i></a>
+                <a href="#" class="hover:text-white"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="mt-8 text-xs">© 2025 地球物理課程團隊製作 | 版權所有</p>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            // 隱藏所有分頁
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // 顯示點選的分頁
+            document.getElementById(tabId).classList.add('active');
+            
+            // 更新導航按鈕樣式
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+            });
+            event.currentTarget.classList.add('text-blue-600');
+
+            // 滾動到頂部
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
