@@ -99,6 +99,95 @@
             </div>
         </div>
 
+        <!-- 第2週：折射探勘學理論：三層模型走時曲線 -->
+        <div id="page-week-2" class="page-view max-w-6xl mx-auto px-6 py-12">
+            <button onclick="showPage('home')" class="mb-6 text-slate-500 hover:text-emerald-600"><i class="fas fa-chevron-left mr-2"></i>返回目錄</button>
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="refraction-gradient p-10 text-white">
+                    <h2 class="text-3xl font-bold">第二週：多層折射波走時公式</h2>
+                    <p class="mt-2 opacity-90 text-sm font-medium">三層水平模型 (Three-Layer Horizontal Model)</p>
+                </div>
+                <div class="p-10 space-y-12">
+                    <!-- 走時曲線視覺化說明 -->
+                    <div class="grid md:grid-cols-2 gap-10 items-start">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-slate-800 border-l-4 border-emerald-500 pl-4">走時曲線圖解分析</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                在三層模型中，隨著距離 $x$ 增加，接收器會依序接收到不同路徑的波。在走時曲線圖（T-x 圖）上，會呈現三段斜率遞減的直線：
+                            </p>
+                            <ul class="space-y-3 text-slate-600 text-sm">
+                                <li class="flex items-start">
+                                    <span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded mr-2">$1/V_1$</span>
+                                    <span><strong>直達波：</strong> 離震源最近，直接沿地表傳遞。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded mr-2">$1/V_2$</span>
+                                    <span><strong>第一介面折射波：</strong> 在較遠處超越直達波，截距為 $t_1$。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded mr-2">$1/V_3$</span>
+                                    <span><strong>第二介面折射波：</strong> 速度最快，在極遠處成為首波（First Arrival），截距為 $t_2$。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-wider">示意圖：三層地層路徑</h4>
+                            <div class="w-full h-48 border-2 border-emerald-100 rounded-lg flex flex-col justify-around p-4">
+                                <div class="w-full h-1 bg-slate-300 relative"><span class="absolute -top-4 right-0 text-[10px]">$V_1$</span></div>
+                                <div class="w-full h-1 bg-slate-400 relative"><span class="absolute -top-4 right-0 text-[10px]">$V_2$ (Depth $h_1$)</span></div>
+                                <div class="w-full h-1 bg-slate-500 relative"><span class="absolute -top-4 right-0 text-[10px]">$V_3$ (Depth $h_1+h_2$)</span></div>
+                            </div>
+                            <p class="text-[10px] text-slate-400 mt-4 text-center">假設速度條件：$V_3 > V_2 > V_1$</p>
+                        </div>
+                    </div>
+
+                    <!-- 核心數學公式 -->
+                    <div class="bg-slate-900 p-8 rounded-2xl text-white">
+                        <h3 class="text-xl font-bold text-emerald-400 mb-6 flex items-center">
+                            <i class="fas fa-calculator mr-2"></i> 走時方程式推導
+                        </h3>
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-400 mb-2">第二層折射波走時 ($T_2$)</h4>
+                                <div class="bg-slate-800 p-4 rounded-lg font-mono text-lg overflow-x-auto">
+                                    $$T_2 = \frac{x}{V_3} + \frac{2h_1\cos(i_{13})}{V_1} + \frac{2h_2\cos(i_{23})}{V_2}$$
+                                </div>
+                                <p class="text-[11px] text-slate-500 mt-2 italic">其中 $i_{13}$ 與 $i_{23}$ 分別為穿過第一、二層進入第三層的臨界角。</p>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-slate-800 p-5 rounded-xl">
+                                    <h5 class="text-xs font-bold text-emerald-500 mb-2">截距時 (Intercept Time $t_2$)</h5>
+                                    <p class="text-sm">由 $T_2$ 方程式中與 $x$ 無關的項組成。可用於解算第二層深度 $h_2$。</p>
+                                </div>
+                                <div class="bg-slate-800 p-5 rounded-xl">
+                                    <h5 class="text-xs font-bold text-emerald-500 mb-2">交叉距離分析</h5>
+                                    <p class="text-sm">若第二層太薄或 $V_2$ 與 $V_1$ 太接近，第二層折射波可能永遠不會成為首波（隱藏層）。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 專業概念補充 -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-6 border border-emerald-100 rounded-2xl bg-emerald-50/30">
+                            <h4 class="font-bold text-emerald-800 mb-2">臨界角關係</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                根據司乃耳定律 (Snell's Law)，折射波要產生，下層速度必須大於上層。臨界角定義為：
+                                <span class="block font-mono font-bold mt-2">$\sin(i_c) = \frac{V_{upper}}{V_{lower}}$</span>
+                            </p>
+                        </div>
+                        <div class="p-6 border border-slate-200 rounded-2xl bg-slate-50/50">
+                            <h4 class="font-bold text-slate-800 mb-2">資料解釋限制</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                1. **低速層 (Low-velocity layer)：** 若下層速度變慢，折射波不會發生，導致深度估計錯誤。<br>
+                                2. **盲層 (Blind zone)：** 中間層太薄導致其折射波無法在 T-x 圖上被觀測到。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 第3週：校園野外實驗報告 (根據圖片內容獨立) -->
         <div id="page-week-3" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
@@ -653,6 +742,7 @@
             </div>
         </div>
 
+        
         <!-- 第14週：黃有志博士專題演講 (根據簡報內容獨立) -->
         <div id="page-week-14" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
