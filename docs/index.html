@@ -653,6 +653,22 @@
             </div>
         </div>
 
+        <!-- 第14週：專題演講 -->
+        <div id="page-week-14" class="page-view max-w-5xl mx-auto px-6 py-12">
+            <button onclick="showPage('home')" class="mb-6 text-slate-500 hover:text-slate-800"><i class="fas fa-chevron-left mr-2"></i>返回目錄</button>
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-800 p-8 text-white">
+                    <h2 class="text-3xl font-bold">第十四週：專題演講</h2>
+                </div>
+                <div class="p-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-microphone-alt text-4xl text-slate-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">講者：黃有志 博士</h3>
+                </div>
+            </div>
+        </div>
+
         <!-- 第14週：黃有志博士專題演講 (根據簡報內容獨立) -->
         <div id="page-week-14" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
@@ -685,6 +701,152 @@
                     </div>
                 </div>
                 <i class="fas fa-earth-asia absolute -bottom-10 -right-10 text-slate-800 text-[200px] opacity-20"></i>
+            </div>
+        </div>
+
+       <!-- 第15週：AI 遇上地震學 (廖勿渝博士專題深度整合) -->
+        <div id="page-week-15" class="page-view max-w-6xl mx-auto px-6 py-12">
+            <button onclick="showPage('home')" class="mb-6 text-slate-500 hover:text-indigo-600"><i class="fas fa-chevron-left mr-2"></i>返回目錄</button>
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="ai-gradient p-10 text-white">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h2 class="text-3xl font-bold">第十五週：AI 遇上地震學</h2>
+                            <p class="mt-2 opacity-90 text-sm font-medium">從深度學習到全自動化監測 — 廖勿渝 博士</p>
+                        </div>
+                        <i class="fas fa-brain text-5xl opacity-20"></i>
+                    </div>
+                </div>
+                
+                <div class="p-10 space-y-12">
+                    <!-- 1. 地震監測的目的與挑戰 -->
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-slate-800 flex items-center">
+                                <i class="fas fa-exclamation-triangle text-indigo-500 mr-2"></i> 傳統監測的挑戰
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                傳統的地震偵測（如 STA/LTA）在面對高雜訊環境或密集地震序列時，容易漏掉微小的地震。此外，傳統方法高度依賴人工檢查，無法滿足未來「秒級」預警與「巨量」編目的需求。
+                            </p>
+                            <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                                <h4 class="text-sm font-bold text-indigo-900 mb-2">地震學的兩大任務：</h4>
+                                <ul class="text-xs space-y-2 text-indigo-700">
+                                    <li><strong>長期編目 (Cataloging)：</strong> 探索地震物理、地殼結構與斷層行為。</li>
+                                    <li><strong>短期預警 (Early Warning)：</strong> 在強烈 S 波抵達前發出警報，保障生命財產。</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-slate-800 flex items-center">
+                                <i class="fas fa-chart-line text-indigo-500 mr-2"></i> AI 的優勢：Big Data
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                隨著感測設備密度增加，每日產生的波形數據已超過人力所能負荷。AI（特別是 CNN 卷積神經網絡）能自動學習波形特徵，在低信噪比下準確拾取 P 波與 S 波。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2. AI 核心技術鏈 (Phase Picking -> Association -> Location) -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">深度學習全自動化流程</h3>
+                        <div class="grid md:grid-cols-3 gap-6 relative">
+                            <!-- Step 1 -->
+                            <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-indigo-400 transition">
+                                <div class="bg-indigo-100 text-indigo-600 w-10 h-10 rounded-full flex items-center justify-center font-bold mb-4">1</div>
+                                <h4 class="font-bold mb-2">RED-PAN (Picking)</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                                    利用深度學習模型自動拾取測站波形中的 P 到達時與 S 到達時。
+                                </p>
+                                <span class="text-[10px] bg-slate-100 text-slate-400 px-2 py-1 rounded">Liao et al. (2022)</span>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-indigo-400 transition">
+                                <div class="bg-indigo-100 text-indigo-600 w-10 h-10 rounded-full flex items-center justify-center font-bold mb-4">2</div>
+                                <h4 class="font-bold mb-2">GaMMA (Association)</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                                    將各站拾取的訊號透過高斯混合模型（Gaussian Mixture Model）關聯為獨立的地震事件。
+                                </p>
+                                <span class="text-[10px] bg-slate-100 text-slate-400 px-2 py-1 rounded">Zhu et al. (2022)</span>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-indigo-400 transition">
+                                <div class="bg-indigo-100 text-indigo-600 w-10 h-10 rounded-full flex items-center justify-center font-bold mb-4">3</div>
+                                <h4 class="font-bold mb-2">NonLinLoc (Location)</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                                    結合 3D 速度模型進行非線性定位，計算地震的絕對震源位置與深度。
+                                </p>
+                                <span class="text-[10px] bg-slate-100 text-slate-400 px-2 py-1 rounded">Lomax et al. (2022)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. SEISYNC 系統架構 -->
+                    <div class="bg-slate-900 rounded-3xl p-10 text-white">
+                        <div class="flex flex-col md:flex-row justify-between items-center mb-10 border-b border-slate-800 pb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-indigo-400">SEISYNC：全自動監測平台</h3>
+                                <p class="text-slate-400 text-sm mt-1">從 02 到 04：全方位的地震數據處理方案</p>
+                            </div>
+                            <div class="text-right mt-4 md:mt-0">
+                                <span class="bg-indigo-500/20 text-indigo-400 text-xs px-3 py-1 rounded-full border border-indigo-500/30">Online Since 2024/12</span>
+                            </div>
+                        </div>
+                        
+                        <div class="grid lg:grid-cols-2 gap-12">
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-slate-800 p-3 rounded-lg mr-4"><i class="fas fa-bolt text-yellow-400"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-100">地震預警 (Real-time EEW)</h4>
+                                        <p class="text-xs text-slate-400 mt-1">利用 EDT (Equal Differential Time) 演算法結合 AI Agents，實現超快速的初步定位與預警通報。</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-slate-800 p-3 rounded-lg mr-4"><i class="fas fa-list-ul text-blue-400"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-100">地震編目 (Near real-time Catalog)</h4>
+                                        <p class="text-xs text-slate-400 mt-1">對已發生的地震進行精細修正，產生高品質的震源參數庫，供後續地震學研究使用。</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-slate-800 p-3 rounded-lg mr-4"><i class="fas fa-wave-square text-green-400"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-100">地動強度預測 (Ground Motion)</h4>
+                                        <p class="text-xs text-slate-400 mt-1">未來目標：結合區域地質特徵（Domain Knowledge），預測各地區可能的 PGA 與 PGV 強度。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 flex flex-col justify-center">
+                                <h4 class="text-sm font-bold text-indigo-300 mb-4">系統整合成果：</h4>
+                                <ul class="text-xs space-y-4 text-slate-300">
+                                    <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> 實現台灣即時監測 (2024/12/19 起)</li>
+                                    <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> 大幅減少地震報告延遲時間</li>
+                                    <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> 提高對微地震與重疊地震的分辨率</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. 結語與講者資訊 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 bg-slate-50 p-10 rounded-2xl">
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-slate-800 mb-4">結語：邁向智慧地震監測</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed italic">
+                                「AI 不是要取代地震學家，而是要解放地震學家的雙手。」廖博士總結指出，透過 AI 代理人與領域知識的結合，我們能更全面地理解地殼運動，並在下一次災害來臨前爭取更多寶貴的應變時間。
+                            </p>
+                        </div>
+                        <div class="w-full md:w-auto">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
+                                <div class="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-user-graduate text-3xl text-indigo-500"></i>
+                                </div>
+                                <div class="font-bold text-slate-900">廖勿渝 博士</div>
+                                <div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">National Cheng Kung University</div>
+                                <div class="mt-3 py-1 px-3 bg-indigo-600 text-white text-[10px] rounded-full">博士後研究員</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
