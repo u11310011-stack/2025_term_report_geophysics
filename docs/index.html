@@ -157,6 +157,83 @@
             </div>
         </div>
 
+        <!-- 第10週：Pygmt 地圖繪製實務 (NEW UPDATED) -->
+        <div id="page-week-10" class="page-view max-w-5xl mx-auto px-6 py-12">
+            <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
+            <div class="bg-white p-10 rounded-3xl shadow-xl border-t-8 border-teal-600">
+                <h2 class="text-3xl font-bold mb-4 italic text-teal-800">第十週：Pygmt 地圖繪製實務</h2>
+                <p class="text-slate-500 mb-8 border-b pb-4">掌握地球科學最強大的繪圖工具：Python interface for Generic Mapping Tools</p>
+                
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <div class="space-y-6">
+                        <div class="bg-teal-50 p-6 rounded-2xl">
+                            <h4 class="font-bold text-teal-800 mb-3"><i class="fas fa-compass mr-2"></i>什麼是 PyGMT?</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                PyGMT 是 GMT (Generic Mapping Tools) 的 Python 介面，它能產生高品質、出版等級的地理圖表。在地球物理學中，常用於繪製震央分佈、地形圖及板塊邊界。
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl">
+                            <h4 class="font-bold text-slate-800 mb-3"><i class="fas fa-layer-group mr-2"></i>核心功能與地圖投影</h4>
+                            <ul class="text-sm space-y-2 text-slate-600">
+                                <li><strong class="text-teal-700">投影法：</strong> 麥卡托投影 (M)、圓柱投影 (X)、極投影</li>
+                                <li><strong class="text-teal-700">海岸線：</strong> 使用 <code>fig.coast()</code> 快速設定陸地與海洋顏色</li>
+                                <li><strong class="text-teal-700">數值高程：</strong> 內建支援地形陰影與高程資料顯示</li>
+                            </ul>
+                        </div>
+                        <a href="https://u11310011-stack.github.io/learning_pygmt/" target="_blank" class="inline-block w-full text-center py-3 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-700 transition shadow-lg">
+                            <i class="fas fa-external-link-alt mr-2"></i> 查看完整線上講義
+                        </a>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="code-block text-xs">
+                            <span class="text-teal-400"># 範例程式：快速繪製台灣地圖</span><br>
+                            import pygmt<br><br>
+                            fig = pygmt.Figure()<br>
+                            <span class="text-slate-400"># 設定區域 (Region) 與 投影 (Projection)</span><br>
+                            fig.coast(<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;region=[119, 123, 21, 26],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;projection="M10c",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;land="lightgray",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;water="skyblue",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;shorelines=True,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;frame="ag"<br>
+                            )<br>
+                            fig.show()
+                        </div>
+                        <div class="bg-slate-800 p-4 rounded-xl text-white text-[10px] flex items-center">
+                            <i class="fas fa-info-circle mr-2 text-yellow-400"></i>
+                            <span>重點提示：<code>region</code> 參數為 [西, 東, 南, 北] 經緯度範圍。</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border border-slate-100 rounded-xl p-4 text-center">
+                        <div class="bg-teal-100 text-teal-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h5 class="font-bold text-sm">地圖投影技巧</h5>
+                        <p class="text-[10px] text-slate-400 mt-2">學習如何根據繪圖目標選擇正確的投影參數。</p>
+                    </div>
+                    <div class="border border-slate-100 rounded-xl p-4 text-center">
+                        <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h5 class="font-bold text-sm">數值高程模型</h5>
+                        <p class="text-[10px] text-slate-400 mt-2">使用 PyGMT 載入 3D 地形資料並進行渲染。</p>
+                    </div>
+                    <div class="border border-slate-100 rounded-xl p-4 text-center">
+                        <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                        <h5 class="font-bold text-sm">震央位置標註</h5>
+                        <p class="text-[10px] text-slate-400 mt-2">將 CSV 資料匯入並在地圖上繪製震點。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 第11週：地磁學與磁極飄移 (移除影片連結) -->
         <div id="page-week-11" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
