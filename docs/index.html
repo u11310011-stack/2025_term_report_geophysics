@@ -366,6 +366,124 @@
             </div>
         </div>
 
+   <!-- 第七週：Dify 工作流內容 -->
+    <div id="page-week-7" class="page-view max-w-6xl mx-auto px-6 py-12">
+        <button onclick="showPage('home')" class="mb-6 text-slate-500 hover:text-amber-600 font-medium">
+            <i class="fas fa-chevron-left mr-2"></i>返回目錄
+        </button>
+        
+        <article class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+            <header class="workflow-gradient p-10 text-white">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold">第七週：Dify 工作流建立與外部工具整合</h2>
+                        <p class="mt-2 opacity-90 font-medium text-lg">讓 AI 成為能處理複雜任務的自動化助手</p>
+                    </div>
+                    <i class="fas fa-sitemap text-6xl opacity-20"></i>
+                </div>
+            </header>
+
+            <div class="p-10 space-y-12 text-slate-700">
+                <!-- 1. 基本帳號與環境 -->
+                <section>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                        <span class="bg-amber-100 text-amber-600 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+                        第一步：環境準備與模型授權
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <p class="text-sm leading-relaxed">
+                                使用 Dify 建立工作流前，必須先取得大語言模型 (LLM) 的通行證。目前最推薦使用 <strong>Google AI Studio</strong> 取得 Gemini API 金鑰。
+                            </p>
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-slate-800 mb-2 text-sm">關鍵動作：</h4>
+                                <ul class="text-xs space-y-2 list-disc pl-4 text-slate-500">
+                                    <li>登入 Google AI Studio 點擊 "Get API key"。</li>
+                                    <li>在 Dify 的「模型供應商」設定中貼上 API 金鑰。</li>
+                                    <li>系統將使用 <strong>PKCS1_OAEP</strong> 技術加密儲存。</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <div class="p-6 bg-amber-50 rounded-2xl border border-amber-100 text-center w-full">
+                                <i class="fas fa-key text-4xl text-amber-500 mb-3"></i>
+                                <div class="text-sm font-bold text-amber-900">API 安全性</div>
+                                <p class="text-[11px] text-amber-700 mt-2">API Key 就像你的網路身分證，切勿在公開場合（如 GitHub）洩漏。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. 工具整合：Notion & Tavily -->
+                <section class="bg-slate-50 -mx-10 p-10">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                        <span class="bg-amber-100 text-amber-600 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span>
+                        第二步：串接外部工具 (Tools Integration)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <h4 class="font-bold text-slate-800">Notion 整合：資料儲存</h4>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                                讓 AI 處理完資料後，能直接寫入你的數位筆記。
+                            </p>
+                            <ol class="text-xs text-slate-600 space-y-2 list-decimal pl-4">
+                                <li>在 Notion 頁面點擊「新整合 (New Integration)」。</li>
+                                <li>複製金鑰 (Secret) 貼回 Dify 工具箱。</li>
+                                <li><strong>重要：</strong> 必須授權 Dify 存取特定頁面，否則會找不到資料。</li>
+                            </ol>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h4 class="font-bold text-slate-800">Tavily 整合：聯網搜尋</h4>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                                突破 AI 模型訓練資料的時間限制，獲得即時資訊。
+                            </p>
+                            <ol class="text-xs text-slate-600 space-y-2 list-decimal pl-4">
+                                <li>至 Tavily 官網註冊帳號。</li>
+                                <li>在 Dashboard 複製 API Key。</li>
+                                <li>整合後，AI 即具備「Google 搜尋」等級的即時檢索能力。</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. 建立工作流 -->
+                <section>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                        <span class="bg-amber-100 text-amber-600 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
+                        第三步：設計與發布工作流 (Workflow)
+                    </h3>
+                    <div class="space-y-6">
+                        <p class="text-sm text-slate-600">
+                            一個標準的 Dify 工作流通常包含以下節點架構：
+                        </p>
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                            <div class="px-6 py-4 bg-white border-2 border-slate-200 rounded-xl font-bold text-sm">開始 (Start)</div>
+                            <i class="fas fa-arrow-right text-slate-300 hidden md:block"></i>
+                            <div class="px-6 py-4 bg-amber-50 border-2 border-amber-200 rounded-xl font-bold text-sm text-amber-700">工具節點 (如 Tavily)</div>
+                            <i class="fas fa-arrow-right text-slate-300 hidden md:block"></i>
+                            <div class="px-6 py-4 bg-indigo-50 border-2 border-indigo-200 rounded-xl font-bold text-sm text-indigo-700">LLM 模型處理</div>
+                            <i class="fas fa-arrow-right text-slate-300 hidden md:block"></i>
+                            <div class="px-6 py-4 bg-white border-2 border-slate-200 rounded-xl font-bold text-sm">結束 (End) / 輸出結果</div>
+                        </div>
+                        <div class="bg-amber-900 text-amber-50 p-6 rounded-2xl text-xs leading-relaxed mt-4">
+                            <strong>開發者提示：</strong> 完成設計後，記得點擊右上角的「發布 (Publish)」按鈕。你可以選擇「執行」來進行測試，或者將其匯出成 API 供其他系統調用。
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </div>
+
         <!-- 第9週：板塊構造與地震 (一) (新加入內容) -->
         <div id="page-week-9" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-6 text-slate-500 hover:text-sky-600"><i class="fas fa-chevron-left mr-2"></i>返回目錄</button>
