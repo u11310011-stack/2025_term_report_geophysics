@@ -312,6 +312,203 @@
             </div>
         </div>
 
+        <!-- 第12週：地球的熱分布 (NEW CONTENT) -->
+        <div id="page-week-12" class="page-view max-w-6xl mx-auto px-6 py-12">
+            <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
+            
+            <div class="bg-white p-10 rounded-3xl shadow-xl border-t-8 border-red-500">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900">第十二週：地球的熱 (Earth's Heat)</h2>
+                        <p class="text-slate-500 mt-2">板塊構造與熱分布探討</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 bg-red-50 text-red-700 px-4 py-2 rounded-full text-sm font-bold border border-red-100">
+                        <i class="fas fa-fire mr-2"></i>地熱流量：1.4 × 10²¹ J
+                    </div>
+                </div>
+
+                <!-- 核心問題 -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="font-bold text-red-600 mb-2">熱從何而來？</h4>
+                        <p class="text-sm text-slate-600">地球內部的熱主要來自放射性元素衰變與原始積聚熱，透過傳導、對流與輻射降溫。</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="font-bold text-red-600 mb-2">內部熱的影響？</h4>
+                        <p class="text-sm text-slate-600">驅動板塊構造、地幔對流，並產生地球磁場（發電機效應）。</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 class="font-bold text-red-600 mb-2">外部熱的影響？</h4>
+                        <p class="text-sm text-slate-600">太陽輻射加熱地表，驅動大氣循環、風化作用與氣候系統。</p>
+                    </div>
+                </div>
+
+                <!-- 能量收支比對 -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-slate-800 border-l-4 border-red-500 pl-4">年度能量收支 (Energy Budget)</h3>
+                        <div class="overflow-hidden rounded-xl border border-slate-200">
+                            <table>
+                                <thead class="text-sm">
+                                    <tr>
+                                        <th>成分</th>
+                                        <th>能量 (J)</th>
+                                        <th>比例比</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr>
+                                        <td>太陽輻射與反射</td>
+                                        <td>5.4 × 10²⁴</td>
+                                        <td>≈ 4000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold text-red-600">地球內部地熱流</td>
+                                        <td class="font-bold text-red-600">1.4 × 10²¹</td>
+                                        <td class="font-bold text-red-600">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>潮汐摩擦</td>
+                                        <td>≈ 10²⁰</td>
+                                        <td>≈ 0.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>地震彈性能</td>
+                                        <td>≈ 10¹⁹</td>
+                                        <td>≈ 0.01</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-xs text-slate-400 font-medium italic">結論：地內熱流量僅佔太陽輻射的 1/4000。</p>
+                    </div>
+                    <div class="bg-slate-900 rounded-2xl p-8 text-white">
+                        <h3 class="text-xl font-bold mb-4 text-orange-400">熱力學基礎 Thermodynamics</h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="p-4 bg-slate-800 rounded-lg">
+                                <span class="text-slate-400">第一定律：能量守恆</span>
+                                <p class="text-lg font-mono text-cyan-400">ΔQ = TΔS = ΔU + ΔW</p>
+                                <p class="text-xs text-slate-500 mt-1">系統熱能增加 = 內能增加 + 對外做功 (如體積膨脹)</p>
+                            </div>
+                            <div class="p-4 bg-slate-800 rounded-lg">
+                                <span class="text-slate-400">重要定義</span>
+                                <ul class="list-disc ml-5 space-y-1 mt-2 text-slate-300">
+                                    <li><strong>焦耳 (J)：</strong> 能量單位。</li>
+                                    <li><strong>卡路里 (cal)：</strong> 1g水升溫1°C所需熱量 (≈ 4.1868 J)。</li>
+                                    <li><strong>比熱 (cₚ)：</strong> ΔQ = cₚ m ΔT</li>
+                                    <li><strong>體積膨脹係數 (α)：</strong> 1/V (∂V/∂T)ₚ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 內部熱分布與生熱率 -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-slate-800 border-l-4 border-red-500 pl-4">地球內部溫度梯度</h3>
+                        <div class="relative bg-orange-50 p-6 rounded-2xl border border-orange-100">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-center"><i class="fas fa-temperature-arrow-up text-red-500 mr-2"></i> 地表梯度：約 <strong>30 K/km</strong></li>
+                                <li class="flex items-center"><i class="fas fa-volcano text-red-500 mr-2"></i> 地核溫度：約 <strong>6000 K</strong></li>
+                            </ul>
+                            <div class="mt-6 h-32 bg-gradient-to-b from-orange-200 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">
+                                地球溫度剖面示意 (Crust → Mantle → Core)
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 border-l-4 border-red-500 pl-4 mb-4">不同岩石生熱率 (10⁻⁹ W/kg)</h3>
+                        <div class="overflow-hidden rounded-xl border border-slate-200">
+                            <table>
+                                <thead class="text-sm">
+                                    <tr>
+                                        <th>岩石/構造類型</th>
+                                        <th>生熱率 (nW/kg)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr class="bg-red-50">
+                                        <td><strong>花崗岩 (Granite)</strong></td>
+                                        <td><strong>≈ 101</strong> (最高)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>大陸地殼 (Continental Crust)</td>
+                                        <td>≈ 28</td>
+                                    </tr>
+                                    <tr>
+                                        <td>地函 (Mantle)</td>
+                                        <td>≈ 0.49 (極低)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 italic">※ 主要來源為 U, Th, K 同位素衰變。</p>
+                    </div>
+                </div>
+
+                <!-- 地表熱流分析 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">地表熱流分析 (Earth Heat Flow)</h3>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-slate-700 underline decoration-red-500 decoration-2">熱流來源比例 (%)</h4>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white">
+                                <table class="text-xs">
+                                    <thead>
+                                        <tr>
+                                            <th>熱源來源</th>
+                                            <th>大陸</th>
+                                            <th>海洋</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>板塊冷卻 (Cooling)</td>
+                                            <td>20%</td>
+                                            <td class="font-bold text-blue-600">85%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>地函底部熱流</td>
+                                            <td>25%</td>
+                                            <td>10%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>上地殼放射性生熱</td>
+                                            <td class="font-bold text-red-600">55%</td>
+                                            <td>—</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-end">
+                                    <span class="text-sm font-bold">海洋熱流 (Avg: 101 mW/m²)</span>
+                                    <span class="text-xs text-slate-400">來自板塊冷卻</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-4 rounded-full overflow-hidden">
+                                    <div class="bg-blue-500 h-full" style="width: 85%"></div>
+                                </div>
+                                <div class="flex justify-between items-end">
+                                    <span class="text-sm font-bold">大陸熱流 (Avg: 65 mW/m²)</span>
+                                    <span class="text-xs text-slate-400">來自放射性元素</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-4 rounded-full overflow-hidden">
+                                    <div class="bg-red-500 h-full" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-6 leading-relaxed">
+                                <strong>總結：</strong> 海洋熱流極度依賴板塊冷卻（85%）；大陸熱流則有一半以上（55%）貢獻自上地殼本身的放射性衰變熱。深部地函熱流僅佔全球 10~25%。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
         <!-- 第14週：黃有志博士專題演講 (根據簡報內容獨立) -->
         <div id="page-week-14" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
