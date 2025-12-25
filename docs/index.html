@@ -221,6 +221,126 @@
             </div>
         </div>
 
+       <!-- 第4週：地震層析成像專題 (甘禮有博士演講內容) -->
+        <div id="page-week-4" class="page-view max-w-6xl mx-auto px-6 py-12">
+            <button onclick="showPage('home')" class="mb-6 text-slate-500 hover:text-blue-600"><i class="fas fa-chevron-left mr-2"></i>返回目錄</button>
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="tomography-gradient p-10 text-white">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h2 class="text-3xl font-bold">第四週：地震層析成像 (Seismic Tomography)</h2>
+                            <p class="mt-2 opacity-90 text-sm font-medium">透視地球內部的科學 — 甘禮有 博士</p>
+                        </div>
+                        <i class="fas fa-project-diagram text-5xl opacity-20"></i>
+                    </div>
+                </div>
+                
+                <div class="p-10 space-y-12">
+                    <!-- 1. 什麼是層析成像？ -->
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-slate-800 flex items-center border-l-4 border-blue-500 pl-4">
+                                層析成像的定義
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Tomography 源自古希臘語 <i>tomos</i> (切片) 與 <i>grapho</i> (描述)。它是一種利用任何類型的穿透波，對物體內部以分段或切片形式成像的方法。
+                            </p>
+                            <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 flex items-center">
+                                <div class="mr-4 text-blue-500"><i class="fas fa-notes-medical text-2xl"></i></div>
+                                <p class="text-xs text-blue-700"><b>類比：</b> 地震層析成像就像是給地球做「CT 斷層掃描」，利用震波路徑穿透地層，重建內部的速度結構。</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-wider">應用範疇</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-600">醫學 (CT/MRI)</span>
+                                <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-600">地球物理學</span>
+                                <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-600">材料科學</span>
+                                <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-600">海洋學</span>
+                            </div>
+                            <p class="text-[10px] text-slate-400 mt-4 leading-tight italic">
+                                地球半徑約 6371km，人類目前最深的井僅約 12km (0.19%)。層析成像是了解深部結構最重要的非破壞性探測技術。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2. 正演與逆推問題 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h3 class="text-xl font-bold text-slate-800 mb-6 text-center">正演問題與逆推問題 (Forward vs. Inverse)</h3>
+                        <div class="flex flex-col md:flex-row items-center justify-around gap-8">
+                            <!-- Forward -->
+                            <div class="text-center space-y-3 flex-1">
+                                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                                    <div class="text-blue-600 font-bold mb-2 uppercase tracking-widest text-xs">Forward Problem</div>
+                                    <p class="text-sm font-bold">已知模型 → 計算數據</p>
+                                    <p class="text-xs text-slate-500 mt-2">根據波速模型預測震波走時。</p>
+                                </div>
+                                <i class="fas fa-arrow-down text-slate-300"></i>
+                            </div>
+                            <!-- Icon -->
+                            <div class="hidden md:block text-slate-200 text-3xl"><i class="fas fa-exchange-alt"></i></div>
+                            <!-- Inverse -->
+                            <div class="text-center space-y-3 flex-1">
+                                <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-200 ring-2 ring-blue-500/10">
+                                    <div class="text-blue-600 font-bold mb-2 uppercase tracking-widest text-xs">Inverse Problem</div>
+                                    <p class="text-sm font-bold">觀測數據 → 推估模型</p>
+                                    <p class="text-xs text-slate-500 mt-2">從實際記錄的走時/波形，反推地表下的速度分佈。</p>
+                                </div>
+                                <i class="fas fa-arrow-up text-slate-300"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. 全波形反演 (Full Waveform Inversion, FWI) -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-4">
+                            進階技術：全波形反演 (FWI)
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            相較於傳統僅利用「走時 (Travel Time)」的層析成像，FWI 嘗試利用地震波記錄中「完整的波形資料」（包含振幅、相位等）進行反演。
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-sm text-blue-700 mb-2">優勢 (Advantage)</h4>
+                                <ul class="text-xs space-y-2 text-slate-500 list-disc pl-4">
+                                    <li>提供比傳統走時層析成像更高的解析度。</li>
+                                    <li>能同時重建 Vp、Vs 以及密度模型。</li>
+                                    <li>在近地表區域的岩層重建效果尤佳。</li>
+                                </ul>
+                            </div>
+                            <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-sm text-blue-700 mb-2">台灣應用實例 (FWI Results)</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed">
+                                    甘博士分享了利用遠震 (Teleseismic) FWI 對台灣地殼的研究成果，成功描繪出：
+                                    <span class="block mt-2 font-medium text-slate-700">增厚的地殼、俯衝板塊、以及大屯山/龜山島等區域的岩漿庫特徵。</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. 結語與講者資訊 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 bg-blue-50 p-10 rounded-2xl">
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-slate-800 mb-4">總結：層析成像的洞察力</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed italic">
+                                地震層析成像不僅是數學與物理的結合，更是我們理解地下物質組成、板塊碰撞演化與地質災害風險的核心工具。透過不斷提升的計算能力與演算法（如 FWI），我們能更清晰地看見地球內部的奧秘。
+                            </p>
+                        </div>
+                        <div class="w-full md:w-auto text-center">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-microscope text-3xl text-blue-500"></i>
+                                </div>
+                                <div class="font-bold text-slate-900">甘禮有 博士</div>
+                                <div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">National Taiwan University</div>
+                                <div class="mt-3 py-1 px-3 bg-blue-600 text-white text-[10px] rounded-full">博士後研究員</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 第6週：重力探勘知識專題 (根據連結內容獨立) -->
         <div id="page-week-6" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
