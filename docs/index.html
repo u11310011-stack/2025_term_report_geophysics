@@ -13,7 +13,6 @@
         .page-view.active { display: block; animation: slideIn 0.3s ease-out; }
         @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .week-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1); }
-        .code-block { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 0.75rem; font-family: monospace; overflow-x: auto; }
     </style>
 </head>
 <body class="text-slate-800">
@@ -49,7 +48,7 @@
                     { id: 7, date: "10/22", title: "重力探勘：API 整合" },
                     { id: 8, date: "10/29", title: "期中考試", highlight: "bg-slate-300 text-slate-800" },
                     { id: 9, date: "11/05", title: "板塊構造與地震 (一)" },
-                    { id: 10, date: "11/12", title: "Pygmt 地圖繪製實務", highlight: "bg-teal-600 text-white" },
+                    { id: 10, date: "11/12", title: "板塊構造與地震 (二)" },
                     { id: 11, date: "11/19", title: "板塊構造與地磁 (一)" },
                     { id: 12, date: "11/26", title: "板塊構造與地磁 (二)" },
                     { id: 13, date: "12/3", title: "板塊構造與地熱" },
@@ -100,7 +99,7 @@
             </div>
         </div>
 
-        <!-- 第3週：校園野外實驗報告 -->
+        <!-- 第3週：校園野外實驗報告 (根據圖片內容獨立) -->
         <div id="page-week-3" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
             <div class="bg-white p-10 rounded-3xl shadow-xl border-t-8 border-blue-600">
@@ -108,6 +107,7 @@
                     <h2 class="text-3xl font-bold">第三週：校園野外實驗 (折射探勘)</h2>
                     <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-bold">第七組 報告</span>
                 </div>
+                
                 <div class="grid md:grid-cols-2 gap-10 mb-10">
                     <div class="space-y-6 text-slate-600">
                         <p class="leading-relaxed">利用鐵鎚擊打鐵板作為人工震源，透過 Geophone 每兩公尺間隔排列受波器，測量地震波在不同地層間的折射速率。</p>
@@ -132,7 +132,7 @@
             </div>
         </div>
 
-        <!-- 第6週：重力探勘知識專題 -->
+        <!-- 第6週：重力探勘知識專題 (根據連結內容獨立) -->
         <div id="page-week-6" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
             <div class="bg-white p-10 rounded-3xl shadow-xl border-t-8 border-orange-600">
@@ -157,104 +157,108 @@
             </div>
         </div>
 
-        <!-- 第10週：Pygmt 地圖繪製實務 (NEW UPDATED) -->
-        <div id="page-week-10" class="page-view max-w-5xl mx-auto px-6 py-12">
+        <!-- 第11週：地磁學與磁極飄移 (移除影片連結) -->
+        <div id="page-week-11" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
-            <div class="bg-white p-10 rounded-3xl shadow-xl border-t-8 border-teal-600">
-                <h2 class="text-3xl font-bold mb-4 italic text-teal-800">第十週：Pygmt 地圖繪製實務</h2>
-                <p class="text-slate-500 mb-8 border-b pb-4">掌握地球科學最強大的繪圖工具：Python interface for Generic Mapping Tools</p>
+            <div class="bg-white p-10 rounded-3xl shadow-xl border-t-8 border-indigo-600">
+                <h2 class="text-3xl font-bold mb-6 text-indigo-900">第十一週：地磁學專題 —— 磁極飄移與地磁逆轉</h2>
                 
-                <div class="grid lg:grid-cols-2 gap-8 mb-12">
-                    <div class="space-y-6">
-                        <div class="bg-teal-50 p-6 rounded-2xl">
-                            <h4 class="font-bold text-teal-800 mb-3"><i class="fas fa-compass mr-2"></i>什麼是 PyGMT?</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                PyGMT 是 GMT (Generic Mapping Tools) 的 Python 介面，它能產生高品質、出版等級的地理圖表。在地球物理學中，常用於繪製震央分佈、地形圖及板塊邊界。
-                            </p>
+                <!-- 代替影片的專業摘要區 -->
+                <div class="bg-slate-50 p-8 rounded-2xl mb-8 border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
+                        <i class="fas fa-earth-americas mr-3 text-indigo-600"></i>當前地磁活動概況
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        地磁極並非固定不動，而是隨著外地核液態金屬的流動而不斷遷移。近年來，科學家觀察到磁北極正以異常的速度離開加拿大向俄羅斯西伯利亞方向移動。這種「磁極飄移」現象是研究地球內部動力的關鍵指標。
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                            <span class="block text-indigo-600 font-bold text-xl">55 km/y</span>
+                            <span class="text-xs text-slate-400">當前磁北極移動速度</span>
                         </div>
-                        <div class="bg-slate-50 p-6 rounded-2xl">
-                            <h4 class="font-bold text-slate-800 mb-3"><i class="fas fa-layer-group mr-2"></i>核心功能與地圖投影</h4>
-                            <ul class="text-sm space-y-2 text-slate-600">
-                                <li><strong class="text-teal-700">投影法：</strong> 麥卡托投影 (M)、圓柱投影 (X)、極投影</li>
-                                <li><strong class="text-teal-700">海岸線：</strong> 使用 <code>fig.coast()</code> 快速設定陸地與海洋顏色</li>
-                                <li><strong class="text-teal-700">數值高程：</strong> 內建支援地形陰影與高程資料顯示</li>
-                            </ul>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                            <span class="block text-indigo-600 font-bold text-xl">780,000 yr</span>
+                            <span class="text-xs text-slate-400">距離上次大逆轉時間</span>
                         </div>
-                        <a href="https://u11310011-stack.github.io/learning_pygmt/" target="_blank" class="inline-block w-full text-center py-3 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-700 transition shadow-lg">
-                            <i class="fas fa-external-link-alt mr-2"></i> 查看完整線上講義
-                        </a>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div class="code-block text-xs">
-                            <span class="text-teal-400"># 範例程式：快速繪製台灣地圖</span><br>
-                            import pygmt<br><br>
-                            fig = pygmt.Figure()<br>
-                            <span class="text-slate-400"># 設定區域 (Region) 與 投影 (Projection)</span><br>
-                            fig.coast(<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;region=[119, 123, 21, 26],<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;projection="M10c",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;land="lightgray",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;water="skyblue",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;shorelines=True,<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;frame="ag"<br>
-                            )<br>
-                            fig.show()
-                        </div>
-                        <div class="bg-slate-800 p-4 rounded-xl text-white text-[10px] flex items-center">
-                            <i class="fas fa-info-circle mr-2 text-yellow-400"></i>
-                            <span>重點提示：<code>region</code> 參數為 [西, 東, 南, 北] 經緯度範圍。</span>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                            <span class="block text-indigo-600 font-bold text-xl">-10% / 百年</span>
+                            <span class="text-xs text-slate-400">地磁強度衰減率</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="border border-slate-100 rounded-xl p-4 text-center">
-                        <div class="bg-teal-100 text-teal-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-globe-asia"></i>
+                <div class="grid md:grid-cols-2 gap-8 mb-10">
+                    <div class="space-y-6">
+                        <div class="bg-indigo-50 p-6 rounded-2xl">
+                            <h4 class="font-bold text-indigo-800 mb-3"><i class="fas fa-magnet mr-2"></i>磁場的產生機制</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                地球磁場主要由外地核的液態鐵鎳流動所產生的「發電機效應」維持。這種流動受到地球自轉與熱對流的影響，形成複雜的三維磁場結構。當對流模式發生劇烈改變時，便可能引發磁極飄移加速甚至磁極逆轉。
+                            </p>
                         </div>
-                        <h5 class="font-bold text-sm">地圖投影技巧</h5>
-                        <p class="text-[10px] text-slate-400 mt-2">學習如何根據繪圖目標選擇正確的投影參數。</p>
+                        <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+                            <h4 class="font-bold text-red-800 mb-3"><i class="fas fa-triangle-exclamation mr-2"></i>磁極逆轉的文明影響</h4>
+                            <ul class="text-sm space-y-2 text-slate-600">
+                                <li>• <strong>導航精度失效：</strong> 航空與航海導航必須頻繁修正偏角。</li>
+                                <li>• <strong>通訊設施損毀：</strong> 磁場減弱會導致低軌道衛星暴露在高能粒子下。</li>
+                                <li>• <strong>能源架構脆弱：</strong> 誘發地磁感應電流會對長距離輸電網路造成巨大壓力。</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="border border-slate-100 rounded-xl p-4 text-center">
-                        <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-mountain"></i>
+
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">關鍵術語解析</h4>
+                        <div class="space-y-3">
+                            <div class="p-4 border border-slate-100 rounded-xl hover:bg-slate-50 transition">
+                                <span class="font-bold text-indigo-600">發電機效應 (Dynamo Effect)</span>
+                                <p class="text-xs text-slate-500">液態外地核中導電流體的運動轉化為磁能的物理過程。</p>
+                            </div>
+                            <div class="p-4 border border-slate-100 rounded-xl hover:bg-slate-50 transition">
+                                <span class="font-bold text-indigo-600">南大西洋異常區 (SAA)</span>
+                                <p class="text-xs text-slate-500">地磁場特別虛弱的區域，是研究磁場逆轉前兆的重要觀測點。</p>
+                            </div>
+                            <div class="p-4 border border-slate-100 rounded-xl hover:bg-slate-50 transition">
+                                <span class="font-bold text-indigo-600">世界地磁模型 (WMM)</span>
+                                <p class="text-xs text-slate-500">每五年更新一次的全球標準導航模型，近年因磁極移速過快曾提前更新。</p>
+                            </div>
                         </div>
-                        <h5 class="font-bold text-sm">數值高程模型</h5>
-                        <p class="text-[10px] text-slate-400 mt-2">使用 PyGMT 載入 3D 地形資料並進行渲染。</p>
                     </div>
-                    <div class="border border-slate-100 rounded-xl p-4 text-center">
-                        <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-map-pin"></i>
-                        </div>
-                        <h5 class="font-bold text-sm">震央位置標註</h5>
-                        <p class="text-[10px] text-slate-400 mt-2">將 CSV 資料匯入並在地圖上繪製震點。</p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl text-white">
+                    <h4 class="text-xl font-bold mb-4 text-indigo-300">本週課後任務</h4>
+                    <p class="text-slate-400 text-sm mb-6">請查閱 NOAA 地磁觀測數據，分析過去 50 年磁北極移動軌跡的加速度變化，並撰寫一份關於其對全球定位系統（GPS）影響的簡報。</p>
+                    <div class="flex space-x-4">
+                        <button class="px-4 py-2 bg-indigo-600 rounded-lg text-xs font-bold hover:bg-indigo-500">下載課綱講義</button>
+                        <button class="px-4 py-2 bg-slate-700 rounded-lg text-xs font-bold hover:bg-slate-600">進入線上論壇</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 第14週：黃有志博士專題演講 -->
+        <!-- 第14週：黃有志博士專題演講 (根據簡報內容獨立) -->
         <div id="page-week-14" class="page-view max-w-5xl mx-auto px-6 py-12">
             <button onclick="showPage('home')" class="mb-8 text-slate-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left mr-2"></i>返回目錄</button>
             <div class="bg-slate-900 text-white p-10 rounded-3xl shadow-2xl overflow-hidden relative">
                 <div class="relative z-10">
                     <h2 class="text-3xl font-black mb-2 tracking-tight">黃有志博士專題演講</h2>
                     <p class="text-cyan-400 font-bold mb-8 italic">從阿蘇火山、熊本地震到嘉南地震觀測：談旅日經驗與地球物理學的實際應用</p>
+                    
                     <div class="grid lg:grid-cols-2 gap-12">
                         <div class="space-y-6">
                             <div class="border-l-4 border-cyan-500 pl-4">
                                 <h4 class="font-bold text-lg text-cyan-200 mb-2 underline">阿蘇火山監測</h4>
-                                <p class="text-sm leading-relaxed text-slate-300">分享京都大學火山研究中心的實務經驗，介紹地震儀、次聲波 (Infrasound) 及地磁觀測在預警火山噴發的應用。</p>
+                                <p class="text-sm leading-relaxed text-slate-300">分享京都大學火山研究中心的實務經驗，介紹地震儀、次聲波 (Infrasound) 及地磁觀測在預警火山噴發（斯通波利式、岩漿水蒸氣噴發）的應用。</p>
                             </div>
                             <div class="border-l-4 border-cyan-500 pl-4">
                                 <h4 class="font-bold text-lg text-cyan-200 mb-2 underline">熊本地震 (2016)</h4>
-                                <p class="text-sm leading-relaxed text-slate-300">探討布田川-日奈久斷層帶活動週期，以及複合式災害在火山地區的特殊影響。</p>
+                                <p class="text-sm leading-relaxed text-slate-300">探討布田川-日奈久斷層帶活動週期，以及複合式災害（山崩、地裂、土石流）在火山地區的特殊影響。</p>
                             </div>
                         </div>
                         <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
                             <h4 class="font-bold text-cyan-400 mb-4">嘉南地區與大屯火山之啟發</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed mb-4">台灣西南地區構造複雜，博士強調應結合機器學習與大規模資料組來提升定位精度。對於大台北地區，需警惕大屯火山群潛在的水蒸氣噴發。</p>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                台灣西南地區構造複雜，博士強調應結合機器學習與大規模資料組來提升定位精度。對於大台北地區，需警惕大屯火山群地表噴氣增加與潛在的水蒸氣噴發。
+                            </p>
                             <div class="flex items-center space-x-3 mt-6">
                                 <div class="w-10 h-10 bg-cyan-600 rounded-full flex items-center justify-center font-bold">黃</div>
                                 <div><p class="text-xs font-bold text-white">黃有志 副研究員</p><p class="text-[10px] text-slate-500">國研院國震中心 / 前京都大學研究員</p></div>
@@ -266,9 +270,9 @@
             </div>
         </div>
 
-        <!-- 通用週次生成模板 (排除已手動定義的週次) -->
+        <!-- 通用週次生成模板 -->
         <script>
-            const templateWeeks = [2, 4, 5, 7, 8, 9, 11, 12, 13, 15, 16];
+            const templateWeeks = [2, 4, 5, 7, 9, 10, 11, 12, 13, 15, 16];
             templateWeeks.forEach(id => {
                 const weekData = weeks.find(w => w.id === id);
                 document.write(`
@@ -278,7 +282,7 @@
                             <h2 class="text-3xl font-bold mb-6 border-b pb-4">第 ${id} 週：${weekData.title}</h2>
                             <div class="py-20 text-center text-slate-300">
                                 <i class="fas fa-hourglass-half text-6xl mb-4"></i>
-                                <p>本週詳細內容正在編排中，請稍候。</p>
+                                <p>本週詳細內容正在加載中，或請參閱課堂筆記。</p>
                             </div>
                         </div>
                     </div>
@@ -288,12 +292,14 @@
     </div>
 
     <footer class="mt-20 py-10 border-t border-slate-200 text-center text-slate-400 text-sm">
-        地球物理學專題課程 ‧ 2025 年度展示 ‧ 基於 PyGMT 學習講義優化
+        地球物理學專題課程 ‧ 2025 年度展示 ‧ 排版清晰 ‧ 互動優化
     </footer>
 
     <script>
         function showPage(pageId) {
+            // 隱藏所有頁面
             document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+            // 顯示目標頁面
             const target = document.getElementById('page-' + pageId);
             if (target) {
                 target.classList.add('active');
